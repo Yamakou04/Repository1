@@ -16,12 +16,20 @@
                <div class='post'>
                    <a href="/posts/{{ $post->id}}"><h2 class='title'>{{$post->title}}</h2></a>
                    <P class='body'>{{$post->body}}</P>
+<<<<<<< HEAD
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                     </form>
                     <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+=======
+                   <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                     @csrf
+                     @method('DELETE')
+                     <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
+                    </form>
+>>>>>>> origin/master
                </div>
            @endforeach
        </div>
@@ -30,6 +38,10 @@
        <script>
            function deletePost(id) {
             'use strict'
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
                 if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
                 document.getElementById(`form_${id}`).submit();
                 }
